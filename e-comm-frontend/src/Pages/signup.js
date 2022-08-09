@@ -1,6 +1,3 @@
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
 
 function SignUpPage() {
@@ -27,9 +24,7 @@ function SignUpPage() {
 
     return (
     
-        <Container>
-            <Row>
-                <Col md={6} className="login-form-container">
+        <div className="login-form-container">
                     <form action="" onSubmit={handleSubmit}>
                         <h1>
                         Sign up
@@ -40,10 +35,7 @@ function SignUpPage() {
                         <input type="password" placeholder="Enter Password" value={passwordInput} required onChange={handlePasswordChange}></input>
                         <button type="submit">Login</button>
                     </form>
-                </Col>
-                <Col md={6}></Col>
-        </Row>
-</Container>
+                </div>
 )
 
 }

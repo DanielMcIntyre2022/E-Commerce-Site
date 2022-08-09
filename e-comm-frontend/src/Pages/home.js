@@ -1,7 +1,23 @@
 import { Link } from "react-router-dom";
-import Row from 'react-bootstrap/Row';
+import '../PageStyles/home.css';
 
 function HomePage() {
+
+     const Catergories = [
+    {
+        name: "Technology",
+        img: ""
+    },
+    {
+        name: "Phones",
+        img: ""
+    },
+    {
+        name: "Laptops",
+        img: ""
+    }
+]
+
     return (
         <div>
             <div>
@@ -20,9 +36,11 @@ function HomePage() {
         <div>
                 <div className="recent-products-container">
                     <h2>Catergories</h2>
-                    <Row>
-
-                    </Row>
+                 
+                        {Catergories.map((catergory) => {  
+                           return <p>{catergory.name}</p>
+                        })}
+               
             </div>   
         </div>
     </div>
