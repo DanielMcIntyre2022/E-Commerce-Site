@@ -1,4 +1,4 @@
-const {Schema} = require('mongoose');
+const {Schema, default: mongoose} = require('mongoose');
 const bcrypt = require('bcrypt');
 
 const UserSchema = Schema({
@@ -32,5 +32,15 @@ const UserSchema = Schema({
             total: 0,
             count: 0, 
         }
-    }
+    },
+    notifications: {
+        type: Array, 
+        default: [],
+    },
+    orders: [{type:Schema.Types.ObjectId, ref: 'Order'}]
+
 })
+
+const user = mongoose.model('user', UserSchema);
+
+module.exports = user;
