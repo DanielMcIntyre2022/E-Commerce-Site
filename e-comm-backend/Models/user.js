@@ -71,6 +71,10 @@ UserSchema.pre('save', function (next) {
     })
 })
 
+UserSchema.pre('remove', function (next) {
+    this.model('Order').remove({owner: this._id}, next);
+})
+
 const user = mongoose.model('user', UserSchema);
 
 module.exports = user;
