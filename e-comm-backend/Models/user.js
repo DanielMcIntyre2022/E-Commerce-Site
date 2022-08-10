@@ -1,7 +1,7 @@
-const {Schema, default: mongoose} = require('mongoose');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-const UserSchema = Schema({
+const UserSchema = mongoose.Schema({
     name: {
         type: String,
         required: [true, 'is required']
@@ -37,7 +37,7 @@ const UserSchema = Schema({
         type: Array, 
         default: [],
     },
-    orders: [{type:Schema.Types.ObjectId, ref: 'Order'}]
+    orders: [{type: mongoose.Schema.Types.ObjectId, ref: 'Order'}]
 
 })
 
